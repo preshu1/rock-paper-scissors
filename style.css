@@ -30,7 +30,7 @@ h1 {
 }
 .choices img:hover {
   cursor: pointer;
-  box-shadow: 6px 6px 10px #ffaebc;
+  box-shadow: 10px 10px 10px #ffaebc;
   background-color: #ffaebc;
 }
 .display {
@@ -41,4 +41,16 @@ h1 {
   gap: 20px;
   font-size: 1.4rem;
   margin: 20px 0;
+}
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+#userScore,
+#compScore {
+  font-size: 3rem;
 }
