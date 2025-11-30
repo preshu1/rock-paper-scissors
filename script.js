@@ -6,6 +6,7 @@ let playerChoiceDisplay = document.querySelector("#playerChoice");
 let computerChoiceDisplay = document.querySelector("#computerChoice");
 let userScoreValue = document.querySelector("#userScore");
 let compScoreValue = document.querySelector("#compScore");
+const resetBtn = document.querySelector("#reset");
 
 const showWinner = (userWin) => {
   if (userWin) {
@@ -21,6 +22,7 @@ const showWinner = (userWin) => {
     compScore++;
     compScoreValue.textContent = compScore;
   }
+  resetBtn.style.display = "inline-block";
 };
 const genCompChoice = () => {
   const options = ["rock", "paper", "scissors"];
@@ -64,4 +66,21 @@ choices.forEach((choice) => {
     //console.log("choice was clicked!", userChoice);
     playGame(userChoice);
   });
+});
+
+//reset btn
+resetBtn.addEventListener("click", () => {
+  userScore = 0;
+  compScore = 0;
+
+  userScoreValue.textContent = userScore;
+  compScoreValue.textContent = compScore;
+
+  playerChoiceDisplay.innerText = "Player's choice: ";
+  computerChoiceDisplay.innerHTML = "Computer's choice: ";
+
+  result.innerText = "Start Playing? Tap on the image and pick your choice!";
+  result.style.backgroundColor = "transparent";
+
+  resetBtn.style.display = "none";
 });
